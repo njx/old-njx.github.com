@@ -1,0 +1,7 @@
+---
+layout: posts
+---
+each document in documents
+  if document.filenameRendered.indexOf("index.") != 0
+    !{partial("post.html.jade", document)}
+    
