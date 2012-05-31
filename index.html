@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <script type="text/javascript" src="http://use.typekit.com/odv1kle.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" type="text/css" href="tempStyles.css">
+</head>
+<body>
+    <div id="header">
+        NOT WEB SAFE
+    </div>
+    <div id="content">
+        <p>I used to be <a href="http://rictus.com/">rictus</a>.<br>
+           I'm moving here presently.</p>
+        <p><a href="http://twitter.com/notwebsafe">@notwebsafe</a><br>
+           <a href="http://github.com/njx">github.com/njx</a></p>
+    </div>
+    <div id="circles1" class="circles clearfix"></div>
+    <div id="circles2" class="circles clearfix"></div>
+    <div id="footer">
+        Narciso (nj) Jaramillo
+    </div>
+    
+    <script type="text/javascript">
+        function websafe(root) {
+            var hexes = ["0", "3", "6", "9", "c", "f"],
+                node;
+            for (var i = 0; i < 6; i++) {
+                for (var j = 0; j < 6; j++) {
+                    for (var k = 0; k < 6; k++) {
+                        node = document.createElement("div");
+                        node.style.backgroundColor = "#" + hexes[i] + hexes[j] + hexes[k];
+                        root.appendChild(node);
+                    }
+                }
+            }
+        }
+        
+        function animate(root) {
+            var rot = Math.random() * 10 + 20,
+                trans = Math.random() * 10 - 5;            
+            root.style["-webkit-transition"] = root.style.MozTransition = root.style.transition =
+                "all 3s ease-in-out";
+            root.style["-webkit-transform"] = root.style.MozTransform = root.style.transform = 
+                "rotate(" + rot + "deg) translate(" + trans + "px)";
+            setTimeout(function() { animate(root) }, Math.random() * 3000 + 3000);
+        }
+
+        var circles1 = document.getElementById("circles1"),
+            circles2 = document.getElementById("circles2");
+        
+        websafe(circles1);
+        websafe(circles2);
+        setTimeout(function() { animate(circles1) }, 1000);
+        setTimeout(function() { animate(circles2) }, 1000);
+    </script>
+</body>
+</html>

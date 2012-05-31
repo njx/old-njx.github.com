@@ -1,0 +1,114 @@
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+html, body {
+    margin: 0 auto;
+    background: #333;
+    overflow-x: hidden;
+    
+    /* make it so text rendering doesn't change during animations */
+    -webkit-font-smoothing: antialiased;
+}
+
+#header {
+    padding: 10px 50px 10px 50px;
+    text-align: left;
+    font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#content {
+    padding: 20px 50px 450px 50px;
+    text-align: left;
+    font-size: 24px;
+    background: #fff;
+    color: #999;
+}
+
+#footer {
+    padding: 10px 50px 10px 50px;
+    color: #fff;
+    font-style: oblique;
+}
+
+.circles {
+    position: absolute;
+    top: 200px;
+    left: 35%;
+    margin: 20px auto;
+    width: 576px;
+
+    -moz-opacity: 0.2;
+    -webkit-opacity: 0.2;
+    opacity: 0.2;
+}
+
+#circles1 {
+    -moz-transform: rotate(25deg) translatey(0px);
+    -webkit-transform: rotate(25deg) translatey(0px);
+    transform: rotate(25deg) translatey(0px);
+}
+
+#circles2 {
+    -moz-transform: rotate(22deg) translatey(-4px);
+    -webkit-transform: rotate(22deg) translatey(-4px);
+    transform: rotate(22deg) translatey(-4px);
+}
+
+.circles * {
+    float: left;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin: 8px;
+}
+
+a:link {
+    color: #333;
+}
+a:visited {
+    color: #333;
+}
+a:hover {
+    color: #999;
+}
+a:active {
+    color: #000;
+}
+
+@media screen and (max-width: 576px) {
+    #header {
+        padding: 0;
+        text-align: center;
+        font-size: 40px;
+    }
+    #content {
+        text-align: center;
+        padding-bottom: 350px;
+    }
+    #footer {
+        margin-top: -460px;
+        text-align: center;
+    }
+    .circles {
+        position: relative;
+        top: -300px;
+        left: 0;
+        width: 306px;
+    }
+    #circles2 {
+        top: -530px;
+    }
+    .circles * {
+        width: 9px;
+        height: 9px;
+        margin: 4px;
+    }
+}
