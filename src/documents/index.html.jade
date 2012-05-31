@@ -2,6 +2,5 @@
 layout: posts
 ---
 each document in documents
-  if document.filenameRendered.indexOf("index.") != 0
+  if document.relativeDirPath == "posts"
     !{partial("post.html.jade", document)}
-    
