@@ -1,59 +1,51 @@
-<!doctype html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
-    <script type="text/javascript" src="http://use.typekit.com/odv1kle.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link rel="stylesheet" type="text/css" href="tempStyles.css">
-</head>
-<body>
-    <div id="header">
-        NOT WEB SAFE
-    </div>
-    <div id="content">
-        <p>I used to be <a href="http://rictus.com/">rictus</a>.<br>
-           I'm moving here presently.</p>
-        <p><a href="http://twitter.com/notwebsafe">@notwebsafe</a><br>
-           <a href="http://github.com/njx">github.com/njx</a></p>
-    </div>
-    <div id="circles1" class="circles clearfix"></div>
-    <div id="circles2" class="circles clearfix"></div>
-    <div id="footer">
-        Narciso (nj) Jaramillo
-    </div>
-    
-    <script type="text/javascript">
-        function websafe(root) {
-            var hexes = ["0", "3", "6", "9", "c", "f"],
-                node;
-            for (var i = 0; i < 6; i++) {
-                for (var j = 0; j < 6; j++) {
-                    for (var k = 0; k < 6; k++) {
-                        node = document.createElement("div");
-                        node.style.backgroundColor = "#" + hexes[i] + hexes[j] + hexes[k];
-                        root.appendChild(node);
-                    }
-                }
-            }
-        }
-        
-        function animate(root) {
-            var rot = Math.random() * 10 + 20,
-                trans = Math.random() * 10 - 5;            
-            root.style["-webkit-transition"] = root.style.MozTransition = root.style.transition =
-                "all 3s ease-in-out";
-            root.style["-webkit-transform"] = root.style.MozTransform = root.style.transform = 
-                "rotate(" + rot + "deg) translate(" + trans + "px)";
-            setTimeout(function() { animate(root) }, Math.random() * 3000 + 3000);
-        }
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"><script src="http://use.typekit.com/odv1kle.js"></script><script>try{Typekit.load();}catch(e){}
+</script><link rel="stylesheet" type="text/css" href="styles.css"></head><body><header><div class="width-setter"><div class="title">NOT WEB SAFE</div></div></header><section id="main" class="clearfix"><div class="width-setter clearfix"><section id="articles"><article><h1>Food truck fingerstache artisan</h1><time>Sun Jun 24 2012 00:45:40 GMT-0700 (PDT)</time><p><img src="http://placekitten.com/600/300"/></p><p>Fixie fingerstache tattooed lo-fi locavore, whatever direct trade semiotics. Blog terry
+richardson cred umami food truck, Austin jean shorts readymade kogi mustache whatever raw 
+denim quinoa. Raw denim polaroid selvage, art party occupy scenester thundercats lo-fi. 
+Trust fund ethnic fanny pack, DIY butcher cliche quinoa. Thundercats cray retro umami, 
+fap skateboard +1 vinyl mcsweeney's locavore. Polaroid wolf umami, truffaut aesthetic 
+mumblecore whatever art party quinoa thundercats mustache swag. Authentic gastropub banksy 
+ethnic, scenester direct trade readymade butcher stumptown hoodie forage.
+</p><p>Occupy forage flexitarian high life, jean shorts DIY biodiesel street art. Stumptown cray 
+semiotics mlkshk, yr mixtape portland american apparel gentrify organic pour-over viral fap 
+seitan. Sartorial echo park brooklyn before they sold out vinyl. Artisan organic thundercats, 
+fanny pack VHS chillwave tattooed. Vinyl squid gastropub VHS put a bird on it raw denim. Cray 
+etsy +1, pickled quinoa lomo vinyl post-ironic art party godard ennui pour-over cliche. Pop-up 
+kale chips semiotics, mustache dreamcatcher hoodie keytar biodiesel vinyl readymade thundercats 
+sartorial.
+</p><p>Food truck fingerstache artisan, brunch kale chips art party single-origin coffee VHS fanny 
+pack. Odd future lo-fi vinyl letterpress cred. Yr food truck thundercats PBR american apparel 
+mumblecore. Cosby sweater farm-to-table etsy PBR synth. Mixtape pitchfork mumblecore raw denim 
+swag, gentrify salvia. Bicycle rights small batch pitchfork salvia tofu, keffiyeh next level 
+blog vinyl odd future kale chips fingerstache mustache cardigan mlkshk. Cray next level lomo, 
+high life synth umami street art twee artisan PBR jean shorts.
+</p>
+</article>
 
-        var circles1 = document.getElementById("circles1"),
-            circles2 = document.getElementById("circles2");
-        
-        websafe(circles1);
-        websafe(circles2);
-        setTimeout(function() { animate(circles1) }, 1000);
-        setTimeout(function() { animate(circles2) }, 1000);
-    </script>
-</body>
-</html>
+</section><aside id="sidebar"><section id="tweets"><h3><a href="http://twitter.com/notwebsafe">@notwebsafe</a></h3><div>Tweet 1</div><div>Tweet 2</div><div>Tweet 3</div><div>Tweet 4</div><div>Tweet 5</div></section><section id="recent"><h3>Recent</h3><div><a href="#">Food truck fingerstache artisan</a></div><div><a href="#">Helvetica truffaut keytar</a></div><div><a href="#">Irony butcher iphone</a></div></section></aside></div></section><footer><div class="width-setter"><div class="content">Narciso (nj) Jaramillo</div></div></footer><script>function randWebSafeColor() {
+  var hexes = ["0", "3", "6", "9", "c", "f"], result = "#", i;
+    for (i = 0; i < 3; i++) {
+      result += hexes[Math.floor(Math.random() * 6)];
+    }
+  return result;
+}
+
+function makeGradientRule(selector) {
+  var gradient = "", gradientBody = "(left, ", color;
+  for (var i = 0; i <= 16; i++) {
+    gradientBody += (i == 0 ? "" : ", ") + randWebSafeColor() + " " + String(i * 100.0 / 16.0) + "%";
+  }
+  gradientBody += ")";
+
+  var prefixes = ["-webkit-", "-moz-", "-o-", "-ms-", ""];
+  for (i in prefixes) {
+    gradient += "background: " + prefixes[i] + "linear-gradient" + gradientBody + "; ";
+  }
+
+  var rule = selector + ' { content: ""; display: block; height: 4px; ' + gradient + ' }';
+  return rule;
+}
+
+document.styleSheets[0].insertRule(makeGradientRule("header:after"));
+document.styleSheets[0].insertRule(makeGradientRule("footer:before"));
+</script></body></html>
