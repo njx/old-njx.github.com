@@ -1,6 +1,6 @@
 ---
 layout: posts
 ---
-each document in getCollection('documents').toJSON()
-  if document.relativeDirPath == "posts"
-    !{partial("post.html.jade", document)}
+each documentModel in getCollection('documents').models
+  if documentModel.get('relativeDirPath') == "posts"
+    !{partial("post.html.jade", documentModel.render().toJSON())}
