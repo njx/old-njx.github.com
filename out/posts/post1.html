@@ -1,4 +1,5 @@
-<p><img src="http://placekitten.com/600/300"/></p><p>Fixie fingerstache tattooed lo-fi locavore, whatever direct trade semiotics. Blog terry
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"><script src="http://use.typekit.com/odv1kle.js"></script><script>try{Typekit.load();}catch(e){}
+</script><link rel="stylesheet" type="text/css" href="../styles.css"></head><body><header><div class="width-setter"><div class="title">NOT WEB SAFE</div></div></header><section id="main" class="clearfix"><div class="width-setter clearfix"><section id="articles"><p><img src="http://placekitten.com/600/300"/></p><p>Fixie fingerstache tattooed lo-fi locavore, whatever direct trade semiotics. Blog terry
 richardson cred umami food truck, Austin jean shorts readymade kogi mustache whatever raw 
 denim quinoa. Raw denim polaroid selvage, art party occupy scenester thundercats lo-fi. 
 Trust fund ethnic fanny pack, DIY butcher cliche quinoa. Thundercats cray retro umami, 
@@ -19,3 +20,30 @@ swag, gentrify salvia. Bicycle rights small batch pitchfork salvia tofu, keffiye
 blog vinyl odd future kale chips fingerstache mustache cardigan mlkshk. Cray next level lomo, 
 high life synth umami street art twee artisan PBR jean shorts.
 </p>
+</section><aside id="sidebar"><section id="tweets"><h3><a href="http://twitter.com/notwebsafe">@notwebsafe</a></h3><div>Tweet 1</div><div>Tweet 2</div><div>Tweet 3</div><div>Tweet 4</div><div>Tweet 5</div></section><section id="recent"><h3>Recent</h3><div><a href="#">Food truck fingerstache artisan</a></div><div><a href="#">Helvetica truffaut keytar</a></div><div><a href="#">Irony butcher iphone</a></div></section></aside></div></section><footer><div class="width-setter"><div class="content">Narciso (nj) Jaramillo</div></div></footer><script>function randWebSafeColor() {
+  var hexes = ["0", "3", "6", "9", "c", "f"], result = "#", i;
+    for (i = 0; i < 3; i++) {
+      result += hexes[Math.floor(Math.random() * 6)];
+    }
+  return result;
+}
+
+function makeGradientRule(selector) {
+  var gradient = "", gradientBody = "(left, ", color;
+  for (var i = 0; i <= 16; i++) {
+    gradientBody += (i == 0 ? "" : ", ") + randWebSafeColor() + " " + String(i * 100.0 / 16.0) + "%";
+  }
+  gradientBody += ")";
+
+  var prefixes = ["-webkit-", "-moz-", "-o-", "-ms-", ""];
+  for (i in prefixes) {
+    gradient += "background: " + prefixes[i] + "linear-gradient" + gradientBody + "; ";
+  }
+
+  var rule = selector + ' { content: ""; display: block; height: 4px; ' + gradient + ' }';
+  return rule;
+}
+
+document.styleSheets[0].insertRule(makeGradientRule("header:after"));
+document.styleSheets[0].insertRule(makeGradientRule("footer:before"));
+</script></body></html>
